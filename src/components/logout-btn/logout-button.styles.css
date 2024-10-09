@@ -1,0 +1,16 @@
+.logout-button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+    font-family: 'Cinzel', serif;
+  }
+  
+  .logout-button:hover {
+    background-color: #c0392b;
+  }
+  

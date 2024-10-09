@@ -1,0 +1,121 @@
+.rpg-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #1c1c2b;
+    position: relative;
+  }
+  
+  .nav-logo h1 {
+    font-family: 'Cinzel', serif;
+    color: #f8c700;
+    font-size: 2rem;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .nav-links li a {
+    color: #f8f8f2;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-family: 'Cinzel', serif;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links li a:hover {
+    color: #f8c700;
+  }
+  
+  .menu-icon {
+    display: none;
+    font-size: 2rem;
+    color: #f8c700;
+    cursor: pointer;
+  }
+  
+  .mobile-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(28, 28, 43, 0.95);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+  }
+  
+  .mobile-nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .profile-picture {
+    width: 50px; /* Adjust size for desktop */
+    height: 50px; /* Keep aspect ratio */
+    border-radius: 50%; /* Makes the image round */
+    object-fit: cover; /* Ensures the image covers the area */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .mobile-nav li a {
+    color: #f8f8f2;
+    font-size: 2rem;
+    text-decoration: none;
+    font-family: 'Cinzel', serif;
+  }
+  
+  .mobile-nav li a:hover {
+    color: #f8c700;
+  }
+  
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+    }
+
+    .mobile-nav {
+        padding: 5rem;
+    }
+    .mobile-nav ul {
+        flex: 1;
+        justify-content: center;
+    }
+  
+    .menu-icon {
+      display: block;
+      z-index: 20;
+    }
+
+    .mobile-logo {
+        flex: 1;
+        font-size: 2rem; /* Adjust size as needed */
+        color: #f8c700; /* Match the color of your app theme */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .profile-picture {
+        width: 150px; /* Adjust size for desktop */
+        height: 150px; /* Keep aspect ratio */
+      }
+  }
+  
+  .hidden {
+    display: none;
+  }
+  

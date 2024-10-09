@@ -1,0 +1,74 @@
+.rpg-footer {
+    background-color: #1c1c2b;
+    color: #f8f8f2;
+    padding: 40px 20px;
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    position: relative;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .footer-logo h1 {
+    font-size: 2.5rem;
+    color: #f8c700;
+    transition: transform 0.3s ease;
+  }
+  
+  .footer-logo p {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #f8c700;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-links ul li a {
+    color: #f8f8f2;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-family: 'Cinzel', serif;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-links ul li a:hover {
+    color: #f8c700;
+  }
+  
+  .footer-social {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .social-icons a {
+    margin: 0 10px;
+    font-size: 1.5rem;
+    color: #f8c700;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+  }
+  
+  .footer-bottom {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #bfbfbf;
+  }
+  
+  @media (max-width: 768px) {
+    .footer-content {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+  
