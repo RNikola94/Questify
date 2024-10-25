@@ -3,8 +3,8 @@ import { useDispatch } from 'react-redux';
 import { setUserInfo } from '../../store/user/userSlice';
 import { useNavigate } from 'react-router-dom';
 import { auth, db } from '../../utils/firebase.utills';
-import { createUserWithEmailAndPassword } from 'firebase/auth'; // Firebase Auth
-import { doc, setDoc } from 'firebase/firestore'; // Firestore
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { doc, setDoc } from 'firebase/firestore';
 import { motion } from 'framer-motion';
 import './register-page.styles.css';
 
@@ -23,7 +23,7 @@ const Registration = () => {
 
   const handleNext = () => {
     if (formData.username && formData.firstName && formData.lastName) {
-      setStep(2); // Move to the next step
+      setStep(2);
     } else {
       alert('Please fill in all fields');
     }
@@ -32,11 +32,9 @@ const Registration = () => {
   const handleRegistration = async () => {
     if (formData.password === formData.confirmPassword) {
       try {
-        // Firebase Auth: Create User
         const userCredential = await createUserWithEmailAndPassword(auth, formData.email, formData.password);
         const user = userCredential.user;
 
-        // Dispatch user info to Redux store
         dispatch(setUserInfo({
           username: formData.username,
           firstName: formData.firstName,
@@ -44,7 +42,6 @@ const Registration = () => {
           email: formData.email
         }));
 
-        // Save user info to Firestore
         await setDoc(doc(db, 'users', user.uid), {
           username: formData.username,
           firstName: formData.firstName,
@@ -52,7 +49,6 @@ const Registration = () => {
           email: formData.email
         });
 
-        // Redirect to character creation page
         navigate('/create-character');
       } catch (error) {
         console.error('Error registering user: ', error);

@@ -4,7 +4,7 @@ import { db, auth } from '../../utils/firebase.utills';
 import { doc, onSnapshot } from 'firebase/firestore';
 import { setQuests } from '../../store/quest/questSlice';
 import { onAuthStateChanged } from 'firebase/auth';
-import { Link } from 'react-router-dom'; // Import Link from React Router
+import { Link } from 'react-router-dom';
 
 const QuestList = () => {
   const dispatch = useDispatch();
@@ -17,7 +17,6 @@ const QuestList = () => {
     // Listen to authentication state changes
     const unsubscribeAuth = onAuthStateChanged(auth, (user) => {
       if (user) {
-        // If user is authenticated, set up real-time listener on their quests
         const userDocRef = doc(db, 'users', user.uid);
         
         unsubscribeFromFirestore = onSnapshot(userDocRef, (docSnapshot) => {
@@ -27,17 +26,16 @@ const QuestList = () => {
           } else {
             console.log('No user data found');
           }
-          setLoading(false);  // Stop loading spinner
+          setLoading(false);
         }, (error) => {
           console.error("Error fetching quests: ", error);
-          setLoading(false);  // Stop loading even if there's an error
+          setLoading(false);
         });
       } else {
-        setLoading(false);  // Stop loading if no user
+        setLoading(false);
       }
     });
 
-    // Clean up listener on component unmount
     return () => {
       if (unsubscribeFromFirestore) unsubscribeFromFirestore();
       unsubscribeAuth();
@@ -59,7 +57,6 @@ const QuestList = () => {
             <h3>{quest.name}</h3>
             <p>Difficulty: {quest.difficulty}</p>
             <p>Experience: {quest.xp}</p>
-            {/* Link to the quest detail page */}
             <Link to={`/quests/${quest.id}`}>View Details</Link>
           </div>
         ))

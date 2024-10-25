@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import DefaultImg from '../../assets/images/default-img.jpg';
-import './navigation.styles.css';
 import LogoutButton from '../logout-btn/LogoutBtn.component';
+import './navigation.styles.css';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,7 +15,7 @@ const Navigation = () => {
 
   const handleResize = () => {
     if (window.innerWidth > 768) {
-      setIsOpen(false);  // Close mobile nav when switching to desktop
+      setIsOpen(false);
       setIsMobile(false);
     } else {
       setIsMobile(true);
@@ -70,7 +70,7 @@ const Navigation = () => {
         >
           <a href="#profile">
             <img
-              src={DefaultImg} // Change this to the actual path of the user's profile picture
+              src={DefaultImg}
               alt="User Profile"
               className="profile-picture"
             />
@@ -94,12 +94,11 @@ const Navigation = () => {
           transition={{ duration: 0.4 }}
         >
           <div className='mobile-logo'>
-              {/* User profile picture */}
               <img
-                src={DefaultImg} // Change this to the actual path of the user's profile picture
+                src={DefaultImg}
                 alt="User Profile"
                 className="profile-picture"
-                onClick={toggleNav} // Optional: Toggle nav when clicking the picture
+                onClick={toggleNav}
               />
             </div>
           <ul>

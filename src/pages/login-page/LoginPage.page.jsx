@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { auth } from '../../utils/firebase.utills';
 import { setUserInfo, authenticateUser } from '../../store/user/userSlice';
 import { motion } from 'framer-motion';
-import './login-page.styles.css'; // Style file for RPG themed login
+import './login-page.styles.css';
 
 const LoginPage = () => {
   const [email, setEmail] = useState('');
@@ -16,14 +16,12 @@ const LoginPage = () => {
   const dispatch = useDispatch();
   const isAuthenticated = useSelector((state) => state.user.isAuthenticated);
 
-  // Redirect to the skills page if the user is already authenticated
   useEffect(() => {
     if (isAuthenticated) {
       navigate('/skills');
     }
   }, [isAuthenticated, navigate]);
 
-  // Authentication status listener
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -44,7 +42,7 @@ const LoginPage = () => {
 
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      navigate('/skills'); // Redirect to the skills page on successful login
+      navigate('/skills');
     } catch (error) {
       setError('Invalid email or password. Please try again.');
     }

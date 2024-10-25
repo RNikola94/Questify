@@ -13,9 +13,9 @@ const LogoutButton = () => {
   const handleLogout = async () => {
     try {
       await signOut(auth);
-      dispatch(clearUserInfo()); // Clear user info from Redux store
-      dispatch(deauthenticateUser()); // Set isAuthenticated to false
-      navigate('/login'); // Redirect to login page
+      dispatch(clearUserInfo());
+      dispatch(deauthenticateUser());
+      navigate('/login');
     } catch (error) {
       console.error('Error logging out:', error);
     }

@@ -1,27 +1,23 @@
-/* Main Skills Page Layout */
 .skills-page {
   text-align: center;
   padding: 20px;
 }
 
-/* Hexagon Grid Layout */
 .hex-grid {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* Hexagon row layout */
 .hex-row {
   display: flex;
   justify-content: center;
 }
 
-/* Hexagon structure */
 .hexagon {
   position: relative;
-  width: 220px; /* Increase hexagon size */
-  height: 250px; /* Keep aspect ratio */
+  width: 220px;
+  height: 250px;
   background-color: transparent;
   cursor: pointer;
   overflow: hidden;
@@ -57,12 +53,11 @@
 }
 
 .hexagon-scale {
-  width: 220px; /* Increase hexagon size */
+  width: 220px;
   height: 250px;
-  margin: 0 3px; /* Adjusted margin for closer columns */
+  margin: 0 3px;
 }
 
-/* Hexagon Text Content */
 .hexagon-in2 h3 {
   font-size: 18px;
   margin: 0;

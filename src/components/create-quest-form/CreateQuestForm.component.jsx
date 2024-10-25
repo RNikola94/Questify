@@ -7,17 +7,18 @@ const QuestCreation = () => {
   const [questData, setQuestData] = useState({
     name: '',
     description: '',
-    difficulty: 'Simple', // default value
-    estimatedTime: 'Short', // default value
-    type: 'Exploration', // default value
+    difficulty: 'Simple',
+    estimatedTime: 'Short',
+    type: 'Exploration',
   });
-  const [calculatedXP, setCalculatedXP] = useState(0); // for displaying XP
-  const [error, setError] = useState(''); // for validation
+
+  const [calculatedXP, setCalculatedXP] = useState(0);
+  const [error, setError] = useState('');
   const dispatch = useDispatch();
 
   // Function to calculate XP based on quest attributes
   const calculateXP = ({ difficulty, estimatedTime }) => {
-    let baseXP = 10; // base XP for any quest
+    let baseXP = 10;
 
     // Add XP based on difficulty
     switch (difficulty) {
@@ -28,7 +29,7 @@ const QuestCreation = () => {
         baseXP += 50;
         break;
       default:
-        baseXP += 0; // for Simple quests
+        baseXP += 0;
     }
 
     // Add XP based on estimated time
@@ -40,7 +41,7 @@ const QuestCreation = () => {
         baseXP += 30;
         break;
       default:
-        baseXP += 0; // for Short quests
+        baseXP += 0;
     }
 
     return baseXP;
@@ -50,7 +51,6 @@ const QuestCreation = () => {
     const { name, value } = e.target;
     setQuestData({ ...questData, [name]: value });
 
-    // Recalculate XP whenever a relevant input changes
     if (name === 'difficulty' || name === 'estimatedTime') {
       const newXP = calculateXP({ ...questData, [name]: value });
       setCalculatedXP(newXP);
@@ -60,19 +60,15 @@ const QuestCreation = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    // Validate form
     if (!questData.name || !questData.description) {
       setError('Please fill in all fields');
       return;
     }
 
-    // Clear any existing errors
     setError('');
 
-    // Dispatch quest creation action, including the calculated XP
     dispatch(createQuest({ ...questData, xp: calculatedXP }));
 
-    // Reset form
     setQuestData({
       name: '',
       description: '',
@@ -80,7 +76,7 @@ const QuestCreation = () => {
       estimatedTime: 'Short',
       type: 'Exploration',
     });
-    setCalculatedXP(0); // Reset XP display
+    setCalculatedXP(0);
   };
 
   return (

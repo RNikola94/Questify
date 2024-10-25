@@ -1,59 +1,58 @@
 .rpg-registration-container {
-    background: url('/path-to-your-rpg-background-image.jpg') no-repeat center center fixed;
-    background-size: cover;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 20px;
-  }
-  
-  .rpg-registration-step {
-    background: rgba(28, 28, 43, 0.85);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    width: 100%;
-    max-width: 400px;
-  }
-  
-  .rpg-input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 2px solid #f8c700;
-    border-radius: 5px;
-    font-family: 'Cinzel', serif;
-    font-size: 1rem;
-    color: #f8f8f2;
-    background-color: transparent;
-  }
-  
-  .rpg-input::placeholder {
-    color: #f8f8f2;
-    opacity: 0.8;
-  }
-  
-  .rpg-button {
-    background-color: #e74c3c;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1.2rem;
-    font-family: 'Cinzel', serif;
-    transition: background-color 0.3s ease;
-    width: 100%;
-  }
-  
-  .rpg-button:hover {
-    background-color: #c0392b;
-  }
-  
-  .rpg-button:focus {
-    outline: none;
-    border: 2px solid #f8c700;
-  }
-  
+  background: url('/path-to-your-rpg-background-image.jpg') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.rpg-registration-step {
+  background: rgba(28, 28, 43, 0.85);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  max-width: 400px;
+}
+
+.rpg-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 2px solid #f8c700;
+  border-radius: 5px;
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  color: #f8f8f2;
+  background-color: transparent;
+}
+
+.rpg-input::placeholder {
+  color: #f8f8f2;
+  opacity: 0.8;
+}
+
+.rpg-button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-family: 'Cinzel', serif;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.rpg-button:hover {
+  background-color: #c0392b;
+}
+
+.rpg-button:focus {
+  outline: none;
+  border: 2px solid #f8c700;
+}

@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { setCharacterInfo } from '../../store/character/characterSlice';
 import { useNavigate } from 'react-router-dom';
 import { db, auth } from '../../utils/firebase.utills';
-import { doc, updateDoc } from 'firebase/firestore';  // Firestore
+import { doc, updateDoc } from 'firebase/firestore';
 import { motion } from 'framer-motion';
 import './character-creation.styles.css';
 
@@ -77,40 +77,102 @@ const CharacterCreation = () => {
     }
   };
 
+  const classBaseStats = {
+    Warrior: {
+      health: 150,
+      mana: 50,
+      defense: 20,
+      attack: 25,
+      stamina: 100,
+      focus: 60,
+      speed: 50
+    },
+    Mage: {
+      health: 100,
+      mana: 150,
+      defense: 10,
+      attack: 30,
+      stamina: 70,
+      focus: 80,
+      speed: 40
+    },
+    Rogue: {
+      health: 120,
+      mana: 70,
+      defense: 15,
+      attack: 35,
+      stamina: 90,
+      focus: 70,
+      speed: 80
+    },
+    Healer: {
+      health: 110,
+      mana: 130,
+      defense: 12,
+      attack: 20,
+      stamina: 80,
+      focus: 90,
+      speed: 40
+    }
+  };
+  
+  
+
   const handleClassClick = (className) => {
     setSelectedClass(className);
-    setCharacterData({ ...characterData, characterClass: className });
+    setCharacterData({ 
+      ...characterData, 
+      characterClass: className,
+      stats: classBaseStats[className]
+     });
   };
 
   const handleCreateCharacter = async () => {
     const user = auth.currentUser;
+    
     if (user) {
+      if (!characterData.stats) {
+        console.error("Character stats not set!");
+        return;
+      }
+  
       const skills = defaultSkills[characterData.characterClass].map(skill => ({ skill, level: 0 }));
-
-      // Dispatch character info to Redux store
+  
+      console.log("Character Data ", characterData);
+  
       dispatch(setCharacterInfo({
         characterName: characterData.characterName,
         characterClass: characterData.characterClass,
-        skills  // Pass the skills array to Redux
+        skills,
+        stats: characterData.stats
       }));
-
-      // Update Firestore with character information
-      await updateDoc(doc(db, 'users', user.uid), {
-        character: {
-          characterName: characterData.characterName,
-          characterClass: characterData.characterClass,
-          level: 1,
-          experience: 0,
-          skillPoints: 0,
-          skills: skills
-        }
-      });
-
-      navigate('/skills');  // Redirect to skills page
+  
+      try {
+        await updateDoc(doc(db, 'users', user.uid), {
+          character: {
+            characterName: characterData.characterName,
+            characterClass: characterData.characterClass,
+            level: 1,
+            experience: 0,
+            skillPoints: 0,
+            skills: skills,
+            stats: characterData.stats,
+            inventory: [],
+            equippedItems: [],
+          }
+        });
+  
+        console.log("Character successfully saved to Firestore!");
+  
+        navigate('/skills');
+      } catch (error) {
+        console.error("Error updating Firestore: ", error);
+      }
     } else {
       alert('User not authenticated');
     }
   };
+  
 
   return (
     <div className="character-creation-container">

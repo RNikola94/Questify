@@ -1,90 +1,89 @@
 .character-creation-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem;
-    background-color: #1c1c2b;
-    border: 2px solid #f8c700;
-    border-radius: 10px;
-    max-width: 600px;
-    margin: 2rem auto;
-    color: #f8f8f2;
-    font-family: 'Cinzel', serif;
-  }
-  
-  .character-input {
-    padding: 0.5rem;
-    margin: 1rem 0;
-    font-size: 1.2rem;
-    width: 80%;
-    border: 2px solid #f8c700;
-    border-radius: 5px;
-    background-color: #2d2d3b;
-    color: #f8f8f2;
-  }
-  
-  .class-buttons-container {
-    display: flex;
-    gap: 1rem;
-    margin: 1rem 0;
-  }
-  
-  .class-button {
-    padding: 0.8rem 1.2rem;
-    background-color: #2d2d3b;
-    border: 2px solid #f8c700;
-    color: #f8f8f2;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
-  }
-  
-  .class-button.selected {
-    background-color: #f8c700;
-    color: #1c1c2b;
-  }
-  
-  .skills-container {
-    margin-top: 2rem;
-    text-align: center;
-  }
-  
-  .skills-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
-  }
-  
-  .skill-item {
-    padding: 0.5rem 1rem;
-    background-color: #2d2d3b;
-    border: 2px solid #f8c700;
-    border-radius: 5px;
-    cursor: pointer;
-    color: #f8f8f2;
-  }
-  
-  .skill-description {
-    margin-top: 1rem;
-    padding: 0.5rem 1rem;
-    background-color: #f8c700;
-    color: #1c1c2b;
-    border-radius: 5px;
-    font-size: 1.2rem;
-    max-width: 300px;
-  }
-  
-  .create-character-button {
-    margin-top: 2rem;
-    padding: 0.8rem 2rem;
-    background-color: #f8c700;
-    border: none;
-    color: #1c1c2b;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 1.2rem;
-    transition: background-color 0.3s ease;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  background-color: #1c1c2b;
+  border: 2px solid #f8c700;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 2rem auto;
+  color: #f8f8f2;
+  font-family: 'Cinzel', serif;
+}
+
+.character-input {
+  padding: 0.5rem;
+  margin: 1rem 0;
+  font-size: 1.2rem;
+  width: 80%;
+  border: 2px solid #f8c700;
+  border-radius: 5px;
+  background-color: #2d2d3b;
+  color: #f8f8f2;
+}
+
+.class-buttons-container {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.class-button {
+  padding: 0.8rem 1.2rem;
+  background-color: #2d2d3b;
+  border: 2px solid #f8c700;
+  color: #f8f8f2;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.class-button.selected {
+  background-color: #f8c700;
+  color: #1c1c2b;
+}
+
+.skills-container {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.skill-item {
+  padding: 0.5rem 1rem;
+  background-color: #2d2d3b;
+  border: 2px solid #f8c700;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #f8f8f2;
+}
+
+.skill-description {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #f8c700;
+  color: #1c1c2b;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  max-width: 300px;
+}
+
+.create-character-button {
+  margin-top: 2rem;
+  padding: 0.8rem 2rem;
+  background-color: #f8c700;
+  border: none;
+  color: #1c1c2b;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease;
+}

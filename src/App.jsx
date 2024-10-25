@@ -15,6 +15,7 @@ import QuestCreationForm from "./components/create-quest-form/CreateQuestForm.co
 import QuestDetailPage from "./pages/quest-detail-page/QuestDetailPage.page";
 import CharacterProfile from "./pages/character-page/CharacterProfile.page";
 import ModalProvider from "./modal-provider/ModalProvider.provider";
+import GearInventory from "./pages/gear-inventory/GearInventory.component";
 
 function App() {
 
@@ -64,6 +65,10 @@ function App() {
         {
           path: 'quests/:questId',
           element: <QuestDetailPage />
+        },
+        {
+          path: 'inventory',
+          element: <GearInventory />
         }
       ]
     }

@@ -18,18 +18,16 @@ const CharacterProfile = () => {
 
   const handleLevelUp = () => {
     dispatch(confirmLevelUp());
-    setShowModal(false);  // Close the modal after leveling up
+    setShowModal(false);
   };
 
   const handleCloseModal = () => {
-    setShowModal(false);  // Manually close the modal
+    setShowModal(false);
   };
 
   return (
     <div>
       <h1>Character Info</h1>
-      {/* Other character information */}
-      
       <LevelUpModal
         showModal={showModal}
         onClose={handleCloseModal}
