@@ -9,13 +9,15 @@ import { doc, updateDoc } from 'firebase/firestore';
 const FIREBASE_API = import.meta.env.VITE_FIREBASE_API_KEY;
 
 // Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: FIREBASE_API,
-  authDomain: "questify-e73da.firebaseapp.com",
-  projectId: "questify-e73da",
-  storageBucket: "questify-e73da.appspot.com",
-  messagingSenderId: "830419921215",
-  appId: "1:830419921215:web:a38e6587c8ad64a1508b8a"
+  authDomain: "question-47d8b.firebaseapp.com",
+  projectId: "question-47d8b",
+  storageBucket: "question-47d8b.appspot.com",
+  messagingSenderId: "304511789272",
+  appId: "1:304511789272:web:171b0eee7d5faa84778fad",
+  measurementId: "G-XRMLLBW651"
 };
 
 const app = initializeApp(firebaseConfig);
